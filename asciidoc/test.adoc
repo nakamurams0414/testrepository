@@ -12,7 +12,11 @@
 これは AsciiDoc で書かれたドキュメントです。
 
 == 画像の貼り付け
+.卑劣な、、、
+
 image::mochi.jpg[ほげほげ]
+.あそびごころ
+image::hyosiki_image03.png[]
 
 == セクション
 
