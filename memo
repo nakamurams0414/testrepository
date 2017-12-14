@@ -1,0 +1,25 @@
+Sub Test1()
+    'Const DIR_PATH = "･Users･masaru･Downloads･vba･"
+    Dim fl_name() As String
+    Dim i As Long, j As Long, buf As Long
+    Dim lastRow As Long
+    Dim outputWorkBook As Workbook
+    Dim outputWorkSheet As Worksheet
+    Set outputWorkBook = ActiveWorkbook
+    Set outputWorkSheet = ActiveSheet
+    
+    lastRow = Cells(Rows.Count, 1).End(xlUp).Row
+    ReDim fl_name(lastRow)
+    MsgBox (lastRow)
+    
+    For i = 1 To lastRow
+    fl_name(i - 1) = Cells(i, 1).Value
+    Next
+    
+    For Each Filename In fl_name
+    Workbooks.Open Filename:=Filename
+    Cells(2, 1) = lastRow
+    ActiveWorkbook.Close savechanges:=True
+    Next
+            
+    End Sub
